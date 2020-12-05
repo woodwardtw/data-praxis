@@ -1,6 +1,6 @@
 <?php
 /**
- * Single module partial template
+ * Single lesson partial template
  *
  * @package UnderStrap
  */
@@ -20,16 +20,10 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<div class="module-content">
-		<?php echo data_praxis_authors();?>
-		<?php echo data_praxis_abstract();?>
-		<?php echo data_praxis_learning_outcomes();?>
-		<?php echo data_praxis_intro_media();?>
-		<?php echo data_praxis_glossary();?>
-		<?php echo data_praxis_recommended_readings();?>
-		<?php echo data_praxis_resources_repeater();?>
-		<?php echo data_praxis_get_lessons();?>
-		<?php //the_content(); ?>
+	<div class="lesson-content">
+		<?php echo data_praxis_quote();?>
+		<?php echo data_praxis_lesson_intro();?>
+		<?php echo data_praxis_lesson_sections_repeater();?>
 		
 
 		<?php

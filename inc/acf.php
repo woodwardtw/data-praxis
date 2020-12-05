@@ -74,7 +74,7 @@ function data_praxis_intro_media(){
 
 //glossary 
 function data_praxis_glossary(){
-	$html = '<div class="accordion" id="glossary"><div class="glossary"><h2 id="vocabHeader"><button type="button" data-toggle="collapse" data-target="#words">Glossary</button></h2><ul id="words" class="collapse " aria-labelledby="vocabHeader" data-parent="#glossary">';
+	$html = '<div class="accordion" id="glossary"><div class="glossary"><h2 id="vocabHeader"><button class="btn-plus btn btn-primary" type="button" data-toggle="collapse" data-target="#words">Glossary</button></h2><ul id="words" class="collapse " aria-labelledby="vocabHeader" data-parent="#glossary">';
 	if( have_rows('glossary') ):
 
 	    // Loop through rows.
@@ -96,22 +96,7 @@ function data_praxis_glossary(){
 	}
 
 
-// <div class="accordion" id="accordionExample">
-//   <div class="card">
-//     <div class="card-header" id="headingOne">
-//       <h2 class="mb-0">
-//         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-//           Collapsible Group Item #1
-//         </button>
-//       </h2>
-//     </div>
 
-//     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-//       <div class="card-body">
-//         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-//       </div>
-//     </div>
-//   </div>
 
 
 //recommended readings
@@ -177,6 +162,69 @@ function data_praxis_glossary(){
 			    wp_reset_postdata(); 
 		}
 
+
+
+//****************************LESSONS*****************************//
+function data_praxis_quote(){
+	$link = '';
+	$attribution = '';
+	//($user['is_logged_in'] ? $user['first_name'] : 'Guest').'!';
+	if(get_field('introductory_quote')){
+		$quote = get_field('introductory_quote');
+
+		if(get_field('quote_attribution')){
+			$attribution = get_field('quote_attribution');
+		}
+		if(get_field('quote_attribution_link') && get_field('quote_attribution')){
+			$attribution = '<a href="' . get_field('quote_attribution_link') . '">' . $attribution . '</a>';
+		}
+
+		return "<blockquote>{$quote}<div class='attribution'>{$attribution}</div></blockquote>";
+	}
+}
+
+function data_praxis_lesson_intro(){
+	if(get_field('introduction')){
+		$intro = get_field('introduction');
+		return "<div class='intro'>{$intro}</div>";
+	}
+
+}
+
+function data_praxis_lesson_sections_repeater(){
+	$html = '';
+	if( have_rows('sections') ):
+
+	    // Loop through rows.
+	    while( have_rows('sections') ) : the_row();
+
+	        // Load sub field value.
+	        $section_title = get_sub_field('section_title');	       
+	        $section_content =  get_sub_field('section_content');
+	        $section_activity = get_sub_field('activity');
+	        if($section_title){
+	        	 $section_id = sanitize_title($section_title);
+	        	$html .= "<div class='section-title' id={$section_id}><h2>{$section_title}</h2></div>";
+	        }
+	         if($section_content){	        
+	        	$html .= "<div class='section-content'>{$section_content}</div>";
+	        }
+	         if($section_activity){	        
+	        	$html .= "<div class='section-activity'><h3>Activity</h3>{$section_activity}</div>";
+	        }
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html;
+		// No value.
+		else :
+		    // Do something...
+		endif;
+	}
+
+
+
+//****************************FUNCTIONAL*****************************//
 
 //save acf json
 		add_filter('acf/settings/save_json', 'data_praxis_json_save_point');

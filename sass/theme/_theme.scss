@@ -87,6 +87,7 @@ h1, h2, h3, h4, h5 h6 {
 //recommended readings 
 .readings {
 	margin: 40px 0;
+	overflow: hidden;
 }
 
 .readings li {
@@ -102,7 +103,7 @@ h1, h2, h3, h4, h5 h6 {
 	margin: 10px 0;
 }
 
-//lessons 
+//lessons list 
 .lessons {
 	margin: 40px 0;
 }
@@ -110,6 +111,50 @@ h1, h2, h3, h4, h5 h6 {
 .lessons li {
 	margin: 10px 0;
 }
+
+/*****************************LESSON SINGLES***************************/
+
+blockquote {
+  background: $lightaqua;
+  border-left: 10px solid $aqua;
+  margin: 40px 0;
+  padding: 10px 20px;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-size: 2em;
+  line-height: 1.1;
+  font-style: italic;
+  font-weight: 100;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+blockquote:before {
+  color: $aqua;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+.attribution {
+	font-size: .8em;
+    margin: 20px 0 20px 0;
+    display: block;
+    text-align: right;
+    width: 100%;
+}
+
+//sections
+.section-activity {
+	border: 2px solid $primary;
+	padding: 20px;
+}
+
+
 
 //video fluid 
 
@@ -125,4 +170,9 @@ h1, h2, h3, h4, h5 h6 {
     height:100%;
     width:100%;
     position:absolute;
+}
+
+//FOOTER
+#wrapper-footer {
+	background-color: $lightblue;
 }

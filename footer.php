@@ -24,10 +24,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-md-12">
 
 				<footer class="site-footer" id="colophon">
+					<div class="row">
+						<div class="col-md-4">
+							<?php if ( is_active_sidebar( 'footerleft' ) ) : ?>
+									<?php dynamic_sidebar( 'footerleft' ); ?>
+							<?php endif; ?>
+						</div>
+						<div class="col-md-4">
+							<?php if ( is_active_sidebar( 'footermiddle' ) ) : ?>
+									<?php dynamic_sidebar( 'footermiddle' ); ?>
+							<?php endif; ?>
+						</div>
+						<div class="col-md-4">
+							<?php if ( is_active_sidebar( 'footerright' ) ) : ?>
+									<?php dynamic_sidebar( 'footerright' ); ?>
+							<?php endif; ?>
+						</div>
+					</div>
 
 					<div class="site-info">
 
-						<?php understrap_site_info(); ?>
+						<?php //understrap_site_info(); ?>
 
 					</div><!-- .site-info -->
 
