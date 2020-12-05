@@ -1,0 +1,128 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+	font-family: 'Fira Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 h6 {
+	color: $primary;
+	text-transform: uppercase;
+}
+
+/*MODULE*/
+
+.module-title {
+	font-weight: 700;
+	border-bottom: 2px solid $grayline;
+	position: relative;
+	color: $primary;
+}
+
+
+.module-title::before {
+	content: '';
+	width: 14px;
+	height: 14px;
+	background-color: $grayline;
+	border-radius: 50%;
+	position: absolute;
+	right: -7px;
+	bottom: -7px;
+	display: block;
+}
+
+.authors-block {
+	color: $aqua;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin-bottom: 40px;
+}
+
+.learning-outcomes-block {
+	background-color: $primary;
+	padding: 20px;
+	color: #fff;
+	margin: 40px 0;
+}
+
+.learning-outcomes-block h2 {
+	color: #fff;
+}
+
+
+.learning-outcomes-block li {
+	margin: 10px 0;
+}
+
+//intro media
+.intro-media {
+	display: block;
+	margin: 30px 0;
+}
+
+//glossary
+.glossary {
+	margin: 40px 0;
+}
+
+.glossary a {
+	font-weight: 700;
+	text-decoration: underline;
+	// text-decoration-color: $orange;
+}
+
+.glossary ul {
+	margin: 10px 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.glossary li {
+	margin: 15px 0;
+	padding: 0 0 0 10px;
+	border-left: 3px solid $orange;
+}
+
+//recommended readings 
+.readings {
+	margin: 40px 0;
+}
+
+.readings li {
+	margin: 10px 0;
+}
+
+//resources
+.resources {
+	margin: 40px 0;
+}
+
+.resources li {
+	margin: 10px 0;
+}
+
+//lessons 
+.lessons {
+	margin: 40px 0;
+}
+
+.lessons li {
+	margin: 10px 0;
+}
+
+//video fluid 
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
