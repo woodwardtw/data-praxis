@@ -108,9 +108,21 @@ h1, h2, h3, h4, h5 h6 {
 	margin: 40px 0;
 }
 
+.lessons ul {
+	list-style: none;
+}
+
 .lessons li {
 	margin: 10px 0;
 }
+
+.here {
+	font-weight: 700;
+	background-color: $lightprimary;
+	padding: 5px 10px 5px 15px;
+}
+
+
 
 /*****************************LESSON SINGLES***************************/
 
@@ -147,6 +159,7 @@ blockquote p {
     text-align: right;
     width: 100%;
 }
+
 
 
 //sections

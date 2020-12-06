@@ -149,17 +149,15 @@ function data_praxis_glossary(){
 		}
 	
 //get lessons 
-		function data_praxis_get_lessons($id){
+		function data_praxis_get_lessons($id, $current_location){
 			global $post;
 			$lessons = get_field('associated_lessons', $id);
 			if( $lessons ){
 					$html = '<div class="lessons"><h2>Lessons</h2><ul>';
-					$current_location = get_the_permalink();					
 				  foreach( $lessons as $key=>$lesson ): 
 				  	$number = $key+1;
 				  	$link = get_the_permalink($lesson);
 				  	$title = get_the_title($lesson);
-
 				  	if ($link === $current_location){
 				  		$location = 'here';
 				  	} else {

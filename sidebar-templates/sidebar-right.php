@@ -27,9 +27,11 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		global $post;
 		$static_id = $post->ID;
 		$type = get_post_type($static_id);
+		
 		if ($type === 'module'){
-			echo data_praxis_get_lessons($static_id);
-		} if ($type === 'lesson'){
+			echo data_praxis_get_lessons($static_id, get_the_permalink());
+		} 
+		if ($type === 'lesson'){
 			// The Query
 			$args = array( 'post_type' => 'module' );
 			$module_query = new WP_Query( $args );
@@ -40,7 +42,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			        $module_query->the_post();
 			        $lessons = get_field('associated_lessons', $post->ID);
 			        if (in_array($static_id, $lessons)){
-			        	echo data_praxis_get_lessons($post->ID);
+			        	echo data_praxis_get_lessons($post->ID, get_the_permalink($static_id));
 			        }
 			    }
 			} else {
