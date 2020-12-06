@@ -151,26 +151,51 @@ function data_praxis_glossary(){
 //get lessons 
 		function data_praxis_get_lessons($id, $current_location){
 			global $post;
-			$lessons = get_field('associated_lessons', $id);
-			if( $lessons ){
-					$html = '<div class="lessons"><h2>Lessons</h2><ul>';
-				  foreach( $lessons as $key=>$lesson ): 
-				  	$number = $key+1;
-				  	$link = get_the_permalink($lesson);
-				  	$title = get_the_title($lesson);
-				  	if ($link === $current_location){
-				  		$location = 'here';
-				  	} else {
-				  		$location = 'not-here';
-				  	}
-			        // Setup this post for WP functions (variable must be named $post).
-			        $html .= "<li class='{$location}'>:{$number} <a href='{$link}'>{$title}</a></li>";
-			    endforeach;
-			    return $html . '</ul></div>';
-			} 
-			    // Reset the global post object so that the rest of the page works correctly.
-			    wp_reset_postdata(); 
+			// $lessons = get_field('associated_lessons', $id):
+			// if( have_rows('associated_lessons', $post->ID) ):
+			// 	while( have_rows('associated_lessons') ) : the_row();
+			// 	endwhile;
+			// endif;
+			// 		$html = '<div class="lessons"><h2>Lessons</h2><ul>';
+			// 		//   //$lessons = get_field('associated_lessons', $post->ID);			     
+			// 		//     // Loop through rows.
+			// 		//     while( have_rows('associated_lessons') ) : the_row();	
+			// 		//         $lesson_ids = get_sub_field('lessons', $post->ID);		
+			// 		// 	  	$number = get_row_index();
+			// 		// 	  	foreach ($lesson_ids as $key => $lesson_id) {
+			// 		// 	  		# code...	$link = get_the_permalink($lesson_id);
+			// 		// 		  	$title = get_the_title($lesson_id);
+			// 		// 		  	if ($link === $current_location){
+			// 		// 		  		$location = 'here';
+			// 		// 		  	} else {
+			// 		// 		  		$location = 'not-here';
+			// 		// 		  	}
+			// 		// 	        // Setup this post for WP functions (variable must be named $post).
+			// 		// 	        $html .= "<li class='{$location}'>:{$number} <a href='{$link}'>{$title}</a></li>";
+			// 		// 		  	}
+			//   //   		endwhile;
+
+			// return $html . '</ul></div>';
+			 
 		}
+
+
+// if( have_rows('associated_lessons', $post->ID) ):
+// 					    // Loop through rows.
+// 					    while( have_rows('associated_lessons') ) : the_row();
+
+// 					        // Load sub field value.
+// 					        $lesson_ids = get_sub_field('lessons', $post->ID);
+// 					        // Do something...
+// 					        if (in_array($static_id, $lesson_ids)){
+// 					        	echo data_praxis_get_lessons($post->ID, get_the_permalink($static_id));
+// 					        }
+
+
+// 					    // End loop.
+// 					    endwhile;
+// 					   endif;
+
 
 
 
