@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php echo data_praxis_glossary();?>
 		<?php echo data_praxis_recommended_readings();?>
 		<?php echo data_praxis_resources_repeater();?>
-		<?php echo data_praxis_get_lessons();?>
+		<?php echo data_praxis_get_lessons($post->ID);?>
 		<?php //the_content(); ?>
 		
 

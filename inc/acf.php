@@ -12,16 +12,19 @@ defined( 'ABSPATH' ) || exit;
 
 //MODULE AUTHORS
 function data_praxis_authors(){
-	$authors = get_field('authors');
-	$html = "<div class='authors-block'> Authored by ";
-	foreach($authors as $key => $author) {
-		$spacer = "";
-		if (sizeof($authors) > 0 && sizeof($authors) != $key+1){
-			$spacer = ", ";
+	if(get_field('authors')){
+		$authors = get_field('authors');
+		$html = "<div class='authors-block'> Authored by ";
+		foreach($authors as $key => $author) {
+			$spacer = "";
+			if (sizeof($authors) > 0 && sizeof($authors) != $key+1){
+				$spacer = ", ";
+			}
+		 	$html .= $author['user_firstname'] . " " . $author['user_lastname'] . $spacer;
 		}
-	 	$html .= $author['user_firstname'] . " " . $author['user_lastname'] . $spacer;
+		 return $html . "</div>";
 	}
-	 return $html . "</div>";
+	
 }
 
 
@@ -146,17 +149,26 @@ function data_praxis_glossary(){
 		}
 	
 //get lessons 
-		function data_praxis_get_lessons(){
-			
-			$lessons = get_field('associated_lessons');
+		function data_praxis_get_lessons($id){
+			global $post;
+			$lessons = get_field('associated_lessons', $id);
 			if( $lessons ){
-							$html = '<div class="lessons"><h2>Lessons</h2><ol>';
+					$html = '<div class="lessons"><h2>Lessons</h2><ul>';
+					$current_location = get_the_permalink();					
+				  foreach( $lessons as $key=>$lesson ): 
+				  	$number = $key+1;
+				  	$link = get_the_permalink($lesson);
+				  	$title = get_the_title($lesson);
 
-				  foreach( $lessons as $lesson ): 
+				  	if ($link === $current_location){
+				  		$location = 'here';
+				  	} else {
+				  		$location = 'not-here';
+				  	}
 			        // Setup this post for WP functions (variable must be named $post).
-			        $html .= '<li><a href="'.get_the_permalink($lesson->ID).'">' . get_the_title($lesson->ID) . '</a></li>';
+			        $html .= "<li class='{$location}'>:{$number} <a href='{$link}'>{$title}</a></li>";
 			    endforeach;
-			    return $html . '</ol></div>';
+			    return $html . '</ul></div>';
 			} 
 			    // Reset the global post object so that the rest of the page works correctly.
 			    wp_reset_postdata(); 

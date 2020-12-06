@@ -310,7 +310,7 @@
             "elements": "",
             "min": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "id"
         }
     ],
     "location": [
@@ -345,5 +345,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1607027144
+    "modified": 1607268676
 }

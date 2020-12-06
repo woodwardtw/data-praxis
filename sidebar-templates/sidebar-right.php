@@ -22,7 +22,35 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 <?php else : ?>
 	<div class="col-md-4 widget-area" id="right-sidebar" role="complementary">
 	<img class="img-fluid logo" src="<?php echo get_template_directory_uri() . '/imgs/logo.svg'?>" alt="Data Praxis and Politics logo.">
-		<?php echo data_praxis_get_lessons();?>
+		<?php 
+		//show associated lessons for the main module page
+		global $post;
+		$static_id = $post->ID;
+		$type = get_post_type($static_id);
+		if ($type === 'module'){
+			echo data_praxis_get_lessons($static_id);
+		} if ($type === 'lesson'){
+			// The Query
+			$args = array( 'post_type' => 'module' );
+			$module_query = new WP_Query( $args );
+			 
+			// get all the modules for the lesson's page
+			if ( $module_query->have_posts() ) {
+			    while ( $module_query->have_posts() ) {
+			        $module_query->the_post();
+			        $lessons = get_field('associated_lessons', $post->ID);
+			        if (in_array($static_id, $lessons)){
+			        	echo data_praxis_get_lessons($post->ID);
+			        }
+			    }
+			} else {
+			    // no posts found
+			}
+			/* Restore original Post Data */
+			wp_reset_postdata();
+		}
+
+		?>
 
 <?php endif; ?>
 <?php dynamic_sidebar( 'right-sidebar' ); ?>

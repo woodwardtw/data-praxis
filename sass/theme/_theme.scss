@@ -148,10 +148,16 @@ blockquote p {
     width: 100%;
 }
 
+
 //sections
 .section-activity {
-	border: 2px solid $primary;
+	border: 2px solid $purple;
 	padding: 20px;
+	background-color: $lightpurple;
+}
+
+.section-activity h3 {
+	color: $purple;
 }
 
 
