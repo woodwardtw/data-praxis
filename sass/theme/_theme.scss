@@ -66,6 +66,32 @@ h1, h2, h3, h4, h5 h6 {
 	margin: 40px 0;
 }
 
+.glossary button {
+	width: 400px;
+	height: 80px;
+	background-image: url(../imgs/dictionary.svg);
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	font-size: 1.5em;
+}
+
+.glossary button.collapsed:after {
+	content: '+';
+	display: inline-block;
+	font-size: 1em;
+	color: #fff;
+	float:right;
+}
+
+.glossary button:after {
+	content: '-';
+	display: inline-block;
+	font-size: 1em;
+	color: #fff;
+	float:right;
+}
+
 .glossary a {
 	font-weight: 700;
 	text-decoration: underline;

@@ -289,7 +289,7 @@
             "key": "field_5fc946fa9fc84",
             "label": "Associated Lessons",
             "name": "associated_lessons",
-            "type": "repeater",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -298,59 +298,17 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add lesson level",
-            "sub_fields": [
-                {
-                    "key": "field_5fcd42e9e0715",
-                    "label": "Lesson Level",
-                    "name": "lesson_level",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "25",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                },
-                {
-                    "key": "field_5fcd4306e0716",
-                    "label": "Lessons",
-                    "name": "lessons",
-                    "type": "relationship",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "lesson"
-                    ],
-                    "taxonomy": "",
-                    "filters": [
-                        "search"
-                    ],
-                    "elements": "",
-                    "min": "",
-                    "max": "",
-                    "return_format": "id"
-                }
-            ]
+            "post_type": [
+                "lesson"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
         }
     ],
     "location": [
@@ -385,5 +343,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1607287903
+    "modified": 1607369766
 }

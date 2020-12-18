@@ -40,32 +40,17 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			if ( $module_query->have_posts() ) {
 			    while ( $module_query->have_posts() ) {
 			        $module_query->the_post();
-			        //$lessons = get_field('associated_lessons', $post->ID);
-			        if( have_rows('associated_lessons', $post->ID) ):
-					    // Loop through rows.
-					    while( have_rows('associated_lessons') ) : the_row();
-
-					        // Load sub field value.
-					        $lesson_ids = get_sub_field('lessons', $post->ID);
-					        // Do something...
-					        var_dump($lesson_ids);
-					        // if (in_array($static_id, $lesson_ids)){
-					        // 	echo data_praxis_get_lessons($post->ID, get_the_permalink($static_id));
-					        // }
-
-
-					    // End loop.
-					    endwhile;
-					   endif;
-
-
+			        $lessons = get_field('associated_lessons', $post->ID);
+			        if (in_array($static_id, $lessons)){
+			        	echo data_praxis_get_lessons($post->ID, get_the_permalink($static_id));
+			        }
 			    }
 			} else {
 			    // no posts found
 			}
-				/* Restore original Post Data */
-				wp_reset_postdata();
-			}
+			/* Restore original Post Data */
+			wp_reset_postdata();
+		}
 
 		?>
 
