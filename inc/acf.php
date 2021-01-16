@@ -249,7 +249,7 @@ function data_praxis_researchers(){
 	        $img = get_sub_field('image');
 	        $img_url = $img['sizes']['medium'];
 
-	        $html .= "<div class='col-md-6'><img class='img-fluid bio-pic' src='{$img_url}'><h2>{$name}</h2>{$bio}</div>";
+	        $html .= "<div class='col-md-6 person'><img class='img-fluid bio-pic' src='{$img_url}'><h2>{$name}</h2>{$bio}</div>";
 	        // Do something...
 	    // End loop.
 	    endwhile;
