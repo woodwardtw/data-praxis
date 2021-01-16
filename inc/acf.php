@@ -234,6 +234,34 @@ function data_praxis_lesson_sections_repeater(){
 		endif;
 	}
 
+//PEOPLE PAGE
+
+function data_praxis_researchers(){
+	$html = '';
+	if( have_rows('researchers') ):
+
+	    // Loop through rows.
+	    while( have_rows('researchers') ) : the_row();
+
+	        // Load sub field value.
+	        $name = get_sub_field('name');
+	        $bio = get_sub_field('biography');
+	        $img = get_sub_field('image');
+	        $img_url = $img['sizes']['medium'];
+
+	        $html .= "<div class='col-md-6'><img class='img-fluid bio-pic' src='{$img_url}'><h2>{$name}</h2>{$bio}</div>";
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html;
+		// No value.
+		else :
+		    // Do something...
+		endif;
+}
+
+
+
 
 
 //****************************FUNCTIONAL*****************************//
