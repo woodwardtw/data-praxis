@@ -217,6 +217,28 @@ blockquote p {
     position:absolute;
 }
 
+//sidebar 
+.lessons {
+	box-shadow: 2px 2px 15px -7px #000000;
+	border-top: 10px solid $yellow;
+	padding: 20px 15px;
+}
+
+.lessons h2:after {
+	content: '01101100 01100101 01110011 01110011 01101111 01101110 01110011';
+	display: block;
+	color: $gray;
+	font-size: 11px;
+	opacity: .3;
+	margin-top: -5px;
+	margin-left: 2px;
+}
+
+.lessons ul {
+	margin-left: 10px;
+	padding-left: 0;
+}
+
 //FOOTER
 #wrapper-footer {
 	background-color: $lightblue;

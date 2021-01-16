@@ -21,7 +21,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		<img class="img-fluid logo" src="<?php echo get_template_directory_uri() . '/imgs/data-logo-final.png'?>" alt="Data Praxis and Politics logo.">
 <?php else : ?>
 	<div class="col-md-4 widget-area" id="right-sidebar" role="complementary">
-	<img class="img-fluid logo" src="<?php echo get_template_directory_uri() . '/imgs/logo.svg'?>" alt="Data Praxis and Politics logo.">
+	<img class="img-fluid logo" src="<?php echo get_template_directory_uri() . '/imgs/data-logo-final.png'?>" alt="Data Praxis and Politics logo.">
 		<?php 
 		//show associated lessons for the main module page
 		global $post;
