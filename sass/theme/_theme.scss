@@ -210,12 +210,15 @@ blockquote p {
 	color: #fff;
 }
 
-.section-activity h3 {
+.section-activity h2 {
 	color: #fff;
 	margin-top: 15px;
-	font-size: 1.5em;
 }
 
+.section-activity p a {
+	text-decoration: underline;
+	color: #fff;
+}
 
 
 //video fluid 
@@ -251,9 +254,13 @@ blockquote p {
 
 //sidebar 
 
+#right-sidebar {
+	padding-left: 40px;
+	padding-top: 40px;
+}
+
 .logo {
 	display: block;
-	margin: 30px;
 }
 
 
@@ -267,7 +274,7 @@ blockquote p {
 	content: '01101100 01100101 01110011 01110011 01101111 01101110 01110011';
 	display: block;
 	color: $gray;
-	font-size: 11px;
+	font-size: 10px;
 	opacity: .3;
 	margin-top: -5px;
 	margin-left: 2px;

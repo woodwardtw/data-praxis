@@ -222,7 +222,7 @@ function data_praxis_lesson_sections_repeater(){
 	        	$html .= "<div class='section-content'>{$section_content}</div>";
 	        }
 	         if($section_activity){	        
-	        	$html .= "<div class='section-activity'><h3>Activity</h3>{$section_activity}</div>";
+	        	$html .= "<div class='section-activity'><h2>Activity</h2>{$section_activity}</div>";
 	        }
 	        // Do something...
 	    // End loop.
