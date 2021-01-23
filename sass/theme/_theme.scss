@@ -1,8 +1,29 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;1,400;1,700&display=swap');
 
 body {
 	font-family: 'Fira Sans', sans-serif;
+}
+
+.module-content, .entry-content, .lesson-content {
+	font-size: 1.2em;
+	color: $primary;
+	font-weight: 200;
+}
+
+
+.module-content li, .entry-content li, .lesson-content li{
+	margin-bottom: 12px;
+}
+
+.module-content a, .entry-content a, .lesson-content a {
+	text-decoration: underline;
+	transition: all .3s;
+}
+
+.module-content a:hover, .entry-content a:hover, .lesson-content a:hover {
+	background-color: $yellow;
 }
 
 h1, h2, h3, h4, h5 h6 {
@@ -166,8 +187,8 @@ blockquote {
   margin: 40px 0;
   padding: 10px 20px;
   quotes: "\201C""\201D""\2018""\2019";
-  font-size: 2em;
-  line-height: 1.1;
+  font-size: 1.4em;
+  line-height: 1.5;
   font-style: italic;
   font-weight: 100;
   border-bottom-left-radius: 20px;
@@ -283,6 +304,20 @@ blockquote p {
 .lessons ul {
 	margin-left: 10px;
 	padding-left: 0;
+}
+
+.indent-1 {
+	margin-left: 20px;
+}
+
+.indent-2 {
+	margin-left: 40px;
+}
+.indent-3 {
+	margin-left: 60px;
+}
+.indent-4 {
+	margin-left: 80px;
 }
 
 //FOOTER

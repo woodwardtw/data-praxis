@@ -261,6 +261,33 @@ function data_praxis_researchers(){
 }
 
 
+//SPECIAL INDEX
+
+function activate_special_index(){
+$html = '';
+	if( have_rows('index_item') ):
+
+	    // Loop through rows.
+	    while( have_rows('index_item') ) : the_row();
+
+	        // Load sub field value.
+	        $obj = get_sub_field('item');
+	        $indent = get_sub_field('indent_level');
+	        //var_dump($obj);
+	        $title = $obj->post_title;
+	        $link = $obj->guid;
+	        // Do something...
+	        $html .= "<div class='indent-{$indent}'><a href='{$link}'>{$title}</a></div>";
+	    // End loop.
+	    endwhile;
+	    return $html;
+		// No value.
+		else :
+		    // Do something...
+		endif;
+}
+
+
 
 
 

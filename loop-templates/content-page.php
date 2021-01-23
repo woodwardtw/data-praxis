@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 
 		<?php the_content(); ?>
-
+		<?php echo activate_special_index();?>
 		<?php
 		wp_link_pages(
 			array(
