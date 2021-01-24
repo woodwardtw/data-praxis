@@ -1,15 +1,33 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 //@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
 
 body {
 	font-family: 'Fira Sans', sans-serif;
+	overflow-x: hidden;
+	 overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
 }
+
+ol, ul {
+	margin-top: 30px;
+}
+
 
 .module-content, .entry-content, .lesson-content {
 	font-size: 1.2em;
 	color: $primary;
-	font-weight: 200;
+	font-weight: 400;
 }
 
 
@@ -28,13 +46,21 @@ body {
 
 h1, h2, h3, h4, h5 h6 {
 	color: $primary;
-	text-transform: uppercase;
+	font-weight: 900;
 }
+
+//header 
+.navbar-brand img{
+	height: 60px;
+    position: absolute;
+    top: 15px;
+}
+
 
 /*MODULE*/
 
 .module-title {
-	font-weight: 700;
+	font-weight: 900;
 	border-bottom: 2px solid $grayline;
 	position: relative;
 	color: $primary;
@@ -58,7 +84,7 @@ h1, h2, h3, h4, h5 h6 {
 }
 
 .authors-block {
-	color: $aqua;
+	color: $primary;
 	font-size: 1.2rem;
 	font-weight: 700;
 	margin-bottom: 40px;
@@ -69,16 +95,21 @@ h1, h2, h3, h4, h5 h6 {
 	padding: 20px;
 	color: #fff;
 	margin: 40px 0;
-	background-image: url(../imgs/nodes.svg);
-	background-position: right top;
-	background-size: 100px;
+	background-image: url(../imgs/wc/brain.png);
+	background-position: 96% 30px;
+	background-size: 120px;
 	background-repeat: no-repeat;
+	padding-left: 40px;
 }
 
 .learning-outcomes-block h2 {
 	color: #fff;
 }
 
+.learning-outcomes-list {
+	width: 82%;
+	padding-left: 20px;
+}
 
 .learning-outcomes-block li {
 	margin: 10px 0;
@@ -92,33 +123,43 @@ h1, h2, h3, h4, h5 h6 {
 
 //glossary
 .glossary {
-	margin: 40px 0;
+	margin: 80px 0;
+	position: relative;
 }
 
-.glossary button {
-	width: 400px;
-	height: 80px;
-	background-image: url(../imgs/data_glass.svg);
-	background-position: left;
-	background-size: contain;
-	background-repeat: no-repeat;
-	font-size: 1.5em;
+.glossary h2 {
+	color: #fff;
+	background-color: $primary;
+	font-weight: 900;
+	padding: 20px 20px 20px 90px;
+	font-size: 2rem;
+	position: relative;
 }
 
-.glossary button.collapsed:after {
+.glossary .btn-plus {
+	width: 100%;
+	font-size: 2rem;
+	text-decoration: none;
+	color: #fff;
+}
+
+
+.glossary h2 .btn-plus.collapsed:after {
 	content: '+';
 	display: inline-block;
 	font-size: 1em;
 	color: #fff;
 	float:right;
+	margin-left: 20px;
 }
 
-.glossary button:after {
+.glossary h2 .btn-plus:after {
 	content: '-';
 	display: inline-block;
 	font-size: 1em;
 	color: #fff;
 	float:right;
+	margin-left: 20px;
 }
 
 .glossary a {
@@ -139,11 +180,34 @@ h1, h2, h3, h4, h5 h6 {
 	border-left: 3px solid $orange;
 }
 
+
+//side images
+
+.side-img {
+	position: absolute;
+	left: -30px;
+	top: -5px;
+	height: 88px;
+	width: 88px;
+	z-index: 100;
+}
+
 //recommended readings 
 .readings {
-	margin: 40px 0;
-	overflow: hidden;
+	margin: 80px 0;
+	position: relative;
 }
+
+.readings h2 {
+	color: #fff;
+	background-color: $primary;
+	font-weight: 900;
+	padding: 20px 20px 20px 90px;
+	font-size: 2rem;
+	position: relative;
+	overflow: visibile;
+}
+
 
 .readings li {
 	margin: 10px 0;
@@ -151,7 +215,17 @@ h1, h2, h3, h4, h5 h6 {
 
 //resources
 .resources {
-	margin: 40px 0;
+	margin: 80px 0;
+	position: relative;
+}
+
+.resources h2 {
+	color: #fff;
+	background-color: $primary;
+	font-weight: 900;
+	padding: 20px 20px 20px 90px;
+	font-size: 2rem;
+	position: relative;
 }
 
 .resources li {
@@ -183,26 +257,26 @@ h1, h2, h3, h4, h5 h6 {
 
 blockquote {
   background: $lightaqua;
-  border-left: 10px solid $aqua;
+  border-left: 10px solid $primary;
   margin: 40px 0;
   padding: 10px 20px;
   quotes: "\201C""\201D""\2018""\2019";
   font-size: 1.4em;
   line-height: 1.5;
-  font-style: italic;
-  font-weight: 100;
+  font-weight: 400;
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-blockquote:before {
-  color: $aqua;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
+// blockquote:before {
+//   color: $primary;
+//   content: open-quote;
+//   font-size: 4em;
+//   line-height: 0.1em;
+//   margin-right: 0.25em;
+//   vertical-align: -0.4em;
+// }
+
 blockquote p {
   display: inline;
 }
@@ -221,19 +295,24 @@ blockquote p {
 
 //sections
 .section-activity {
-	border: 2px solid $purple;
+	border-left: 10px solid $yellow;
 	padding: 20px;
-	background-color: $purple;
-	background-image: url(../imgs/data_brain.svg);
-	background-position: right top;
+	background-color: $primary;
+	background-image: url(../imgs/wc/lapizder.png);
+	background-position: 98% 20px;
 	background-size: 100px;
 	background-repeat: no-repeat;
 	color: #fff;
+	padding-left: 40px;
 }
 
 .section-activity h2 {
 	color: #fff;
 	margin-top: 15px;
+}
+
+.section-activity p {
+	width: 80%;
 }
 
 .section-activity p a {
@@ -249,7 +328,7 @@ blockquote p {
     padding-bottom:56.25%;
     position:relative;
     height:0;
-    box-shadow: 8px 8px 0px $purple;
+    box-shadow: 8px 8px 0px $yellow;
 
 }
 .video-responsive iframe{
@@ -322,5 +401,61 @@ blockquote p {
 
 //FOOTER
 #wrapper-footer {
-	background-color: $lightblue;
+	background-color: $primary;
+	color: #fff;
+	position: relative;
+	margin-top: 100px;
 }
+
+#wrapper-footer:after {
+	content:'';
+	height: 120px;
+	width: 120px;
+	display: block;
+	position: absolute;
+	right: 30px;
+	top: -85px;
+	background-image: url(../imgs/data-logo-final.svg);
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+#wrapper-footer a, #wrapper-footer h2,#wrapper-footer h3{
+	color: #fff;
+}
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) { 
+	.navbar-brand img {
+		max-width: 70%;
+	}
+	#right-sidebar .logo {
+		display: none;
+	}
+	.module-content {
+		padding-right: 0;
+	}
+	.readings h2, .glossary .btn-plus, .resources h2 {
+		font-size: 1.5rem;
+	}
+ }
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	#main-nav{
+		height: 60px;
+	}
+
+	#navbarNavDropdown {
+	    position: absolute;
+	    right: 90px;
+	    top: -20px;
+	    width: 100%;
+	}
+
+ }

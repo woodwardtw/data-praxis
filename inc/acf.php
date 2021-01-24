@@ -14,14 +14,8 @@ defined( 'ABSPATH' ) || exit;
 function data_praxis_authors(){
 	if(get_field('authors')){
 		$authors = get_field('authors');
-		$html = "<div class='authors-block'> Authored by ";
-		foreach($authors as $key => $author) {
-			$spacer = "";
-			if (sizeof($authors) > 0 && sizeof($authors) != $key+1){
-				$spacer = ", ";
-			}
-		 	$html .= $author['user_firstname'] . " " . $author['user_lastname'] . $spacer;
-		}
+		$html = "<div class='authors-block'> Authored by ";		
+		$html .= $authors;
 		 return $html . "</div>";
 	}
 	
@@ -77,7 +71,9 @@ function data_praxis_intro_media(){
 
 //glossary 
 function data_praxis_glossary(){
-	$html = '<div class="accordion" id="glossary"><div class="glossary"><h2 id="vocabHeader"><button class="btn-plus btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#words">Glossary</button></h2><ul id="words" class="collapse " aria-labelledby="vocabHeader" data-parent="#glossary">';
+	$img_base = get_template_directory_uri();
+	$img = "/imgs/wc/a-z.png";
+	$html = '<div class="accordion" id="glossary"><div class="glossary"><img class="side-img" src="' . $img_base . $img . '" alt="Icon for glossary."><h2 id="vocabHeader"><a href="" class="btn-plus collapsed" type="button" data-toggle="collapse" data-target="#words">Glossary</a></h2><ul id="words" class="collapse " aria-labelledby="vocabHeader" data-parent="#glossary">';
 	if( have_rows('glossary') ):
 
 	    // Loop through rows.
@@ -91,7 +87,7 @@ function data_praxis_glossary(){
 	        $html .= "<li><a href='{$link}'>{$term}</a> {$definition}</li>";
 	    // End loop.
 	    endwhile;
-	    return $html . "</ul></div>";
+	    return $html . "</ul></div></div>";
 		// No value.
 		else :
 		    // Do something...
@@ -104,7 +100,9 @@ function data_praxis_glossary(){
 
 //recommended readings
 	function data_praxis_recommended_readings(){
-		$html = '<div class="readings"><h2>Recommended Readings</h2><ol>';
+		$img_base = get_template_directory_uri();
+		$img = "/imgs/wc/book.png";
+		$html = '<div class="readings"><img class="side-img" src="' . $img_base . $img . '" alt="Icon for readings."><h2>Recommended Readings</h2><ol>';
 		if( have_rows('recommended_readings') ):
 	
 		    // Loop through rows.
@@ -127,7 +125,9 @@ function data_praxis_glossary(){
 //resources 
 
 	function data_praxis_resources_repeater(){
-		$html = '<div class="resources"><h2>KEY COMPLEMENTARY RESOURCES</h2><ol>';
+		$img_base = get_template_directory_uri();
+		$img = "/imgs/wc/kee-2.png";
+		$html = '<div class="resources"><img class="side-img" src="' . $img_base . $img . '" alt="Icon for resources."><h2>Key Complementary Resources</h2><ol>';
 		if( have_rows('resources') ):
 		
 		    // Loop through rows.
@@ -191,7 +191,7 @@ function data_praxis_quote(){
 			$attribution = '<a href="' . get_field('quote_attribution_link') . '">' . $attribution . '</a>';
 		}
 
-		return "<blockquote>{$quote}<div class='attribution'>{$attribution}</div></blockquote>";
+		return "<blockquote>\"{$quote}\"<div class='attribution'>{$attribution}</div></blockquote>";
 	}
 }
 
