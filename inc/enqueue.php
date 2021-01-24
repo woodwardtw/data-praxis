@@ -33,3 +33,17 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 } // End of if function_exists( 'understrap_scripts' ).
 
 add_action( 'wp_enqueue_scripts', 'understrap_scripts' );
+
+
+function thinking_grid_enqueue_stuff() {
+	global $post;
+	$the_theme     = wp_get_theme();
+	$theme_version = $the_theme->get( 'Version' );
+	$js_version = $theme_version . '.' . filemtime( get_template_directory() . '/js/theme.min.js' );
+  if (is_page_template('page-templates/thinking-grid.php' )) {
+  	//https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+  		wp_enqueue_script( 'jq-ui-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array(), $js_version, true );
+    	wp_enqueue_script( 'thinking-grid-scripts', get_template_directory_uri() . '/js/thinking-grid.js', array(), $js_version, true );
+  } 
+}
+add_action( 'wp_enqueue_scripts', 'thinking_grid_enqueue_stuff' );
