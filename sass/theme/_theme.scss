@@ -50,12 +50,29 @@ h1, h2, h3, h4, h5 h6 {
 }
 
 //header 
+
+.navbar-brand {
+	display: inline-block;
+    width: 200px;
+    height: 80px;
+    z-index: 100;
+}
+
 .navbar-brand img{
 	height: 60px;
     position: absolute;
     top: 15px;
 }
 
+
+//TABLE
+
+.section-content table td, .section-content table th {
+	min-width: 200px;
+	padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
 
 /*MODULE*/
 
@@ -294,6 +311,10 @@ blockquote p {
 }
 
 //sections
+.section-title h2 {
+	margin-top: 40px;
+}
+
 .section-activity {
 	border-left: 10px solid $yellow;
 	padding: 20px;
@@ -304,6 +325,7 @@ blockquote p {
 	background-repeat: no-repeat;
 	color: #fff;
 	padding-left: 40px;
+	margin: 40px 0;
 }
 
 .section-activity h2 {
