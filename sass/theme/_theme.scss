@@ -59,7 +59,8 @@ h1, h2, h3, h4, h5 h6 {
 }
 
 .navbar-brand img{
-	height: 60px;
+	max-height: 35px;
+	max-width: 400px;
     position: absolute;
     top: 15px;
 }
@@ -450,23 +451,33 @@ blockquote p {
 
 //GRID LAND
 
+#thinking-grid {
+	position: relative;
+    height: 90vh;
+}
+
+#toolbox {
+	z-index: 1000;
+}
+
 .axis {
-  background-image: url(https://datapraxis.net/wp-content/themes/data-praxis/imgs/grid.svg);
+  background-image: url(../imgs/grid.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100vh;
+  height: 90vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .draggable {
-    width: 300px;
-    margin: 10px;
-   background-image: url(https://datapraxis.net/wp-content/themes/data-praxis/imgs/drag.svg);
-   background-repeat: no-repeat;
-  background-position: top left;
-  background-size: 30px;
+  display: inline-block;
+  margin: 10px;
   padding-top: 30px;
   z-index: 1000;
+  background-color: $primary;
 }
 
 .draggable:before {
@@ -475,34 +486,31 @@ blockquote p {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: grey;
   height:30px;
   z-index: 0;
-  background-image: url(https://datapraxis.net/wp-content/themes/data-praxis/imgs/drag.svg);
-   background-repeat: no-repeat;
-  background-position: top left;
+  background-image: url(../imgs/drag.svg);
+  background-repeat: no-repeat;
+  background-position: 3px;
   background-size: 30px;
+  padding: 5px;
+  cursor:grab;
 }
 
 textarea {
-  width: 300px;
+  width: 320px;
   margin: 0;
   font-size: 1.2em;
   resize: both;
   overflow: auto;
-  background-color: rgba(255,255,0,.3);
+  background-color: #fff;
+  margin: 5px 10px;
 }
 
-#x-top {
-  background-color: red;
-}
-
-#x-bottom {
-  background-color: green;
-}
 
 #y-top,#y-bottom {
   background-color: lightblue;
+  position: absolute;
+  padding: 10px;
 }
 
 
@@ -516,46 +524,51 @@ textarea {
 
 .label {
   width: 200px;
-  height: 50px;
+  min-height: 50px;
   font-size: 1.5em;
   font-weight: 700;
   line-height: 1.1;
 }
 
 .top {
-  top: 10%;
+  top: 3%;
 }
 
 .bottom {
-  bottom: 1%;
+  bottom: 0;
 }
 
 .x-left {
-  position: fixed;
+  position: absolute;
   left: 50px;
   top: 50%;
   text-align: left;
 }
 
 .x-right {
-  position: fixed;
+  position: absolute;
   right: 50px;
   top: 50%;
   text-align: right;
 }
 
 #make {
-  background-color: green;
-  color: #fff;
+  background-color: #ffa300;
+  color: #000;
   padding: 10px 15px;
   border-radius: 30px;
   margin: 10px 0 0 0;
   transition: .4s all;
+  font-size: 1em;
+  font-weight: 600;
+  width: 200px;
+  margin-left: auto;
+  display: block;
 }
 
 #make:hover {
-  background-color: lime;
-  color: #000;
+  background-color: $primary;
+  color: #fff;
 }
 
 

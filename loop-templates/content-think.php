@@ -10,8 +10,8 @@ defined( 'ABSPATH' ) || exit;
 
 the_content();?>
 
-<div class="row">
-    <div class="offset-md-11 col-md-1 tools" id="toolbox">
+<div class="row" id="thinking-grid">
+    <div class="offset-md-9 col-md-3 tools" id="toolbox">
 <!--       <textarea placeholder='entry your y axis top label here' rows="1" cols="50" id="y-top-entry"></textarea>
       <textarea placeholder='entry your y axis bottom label here' rows="1" cols="50" id="y-bottom-entry"></textarea> -->
             <button id="make">+ element</button>
